@@ -1,21 +1,18 @@
+import { useEffect, useState } from "react";
 import Produtos from "../components/Produtos";
+import requestAPI from "../utils/resquestAPI";
 
 
 const PaginaDeProdutos = () => {
-    const arr = [{    
-        "id": 1,
-        "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-        "price": 109.95,
-        "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-        "category": "men's clothing",
-        "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
-        "rating": {
-        "rate": 3.9,
-        "count": 120
-    }}]
+
+    const [arrayDeProdutos, setArrayDeProdutos] = useState([])
+
+    useEffect(() => {
+        requestAPI('https://fakestoreapi.com/products', setArrayDeProdutos);
+    }, [])
 
     return (<>
-                <Produtos arrayDeProdutos={arr} />
+                <Produtos arrayDeProdutos={arrayDeProdutos} />
             </>)
 }
 
