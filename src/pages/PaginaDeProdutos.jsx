@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Produtos from "../components/Produtos";
-import requestAPI from "../utils/resquestAPI";
+import requestAPI from "../utils/requestAPI";
 
 
 const PaginaDeProdutos = () => {
