@@ -5,7 +5,7 @@ const Carrinho = ({arrayCarrinho}) => {
         return(
             <ul>
                 {arrayCarrinho.map((itemDoCarrinho) => 
-                    <ProdutosCarrinho id={itemDoCarrinho.id} itemDoCarrinho={itemDoCarrinho}/>
+                    <ProdutosCarrinho key={itemDoCarrinho.id} itemDoCarrinho={itemDoCarrinho}/>
                 )}
             </ul>
         )

@@ -7,10 +7,14 @@ function App() {
 
   const [arrayCarrinho, setArrayCarrinho] = useState([])
 
+  const addShopCart = (produto) => {
+      setArrayCarrinho((prev) => [...prev, produto])
+  }
+
   return (
     <>
       <Carrinho arrayCarrinho={arrayCarrinho} />
-      <PaginaDeProdutos  />
+      <PaginaDeProdutos addShopCart={addShopCart}/>
     </>
   )
 }

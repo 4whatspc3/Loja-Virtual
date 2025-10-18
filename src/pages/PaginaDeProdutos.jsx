@@ -3,7 +3,7 @@ import Produtos from "../components/Produtos";
 import requestAPI from "../utils/requestAPI";
 
 
-const PaginaDeProdutos = () => {
+const PaginaDeProdutos = ({addShopCart}) => {
 
     const [arrayDeProdutos, setArrayDeProdutos] = useState([])
 
@@ -12,7 +12,7 @@ const PaginaDeProdutos = () => {
     }, [])
 
     return (<>
-                <Produtos arrayDeProdutos={arrayDeProdutos} />
+                <Produtos arrayDeProdutos={arrayDeProdutos} addShopCart={addShopCart}/>
             </>)
 }
 
