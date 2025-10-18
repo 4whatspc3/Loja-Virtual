@@ -4,8 +4,8 @@ const Carrinho = ({arrayCarrinho}) => {
 
         return(
             <ul>
-                {arrayCarrinho.map((itemDoCarrinho) => 
-                    <ProdutosCarrinho key={itemDoCarrinho.id} itemDoCarrinho={itemDoCarrinho}/>
+                {arrayCarrinho.map((itemDoCarrinho, index) => 
+                    <ProdutosCarrinho key={index} itemDoCarrinho={itemDoCarrinho}/>
                 )}
             </ul>
         )

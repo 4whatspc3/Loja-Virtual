@@ -11,10 +11,14 @@ function App() {
       setArrayCarrinho((prev) => [...prev, produto])
   }
 
+  const removeShopCart = (produtoID) => {
+    setArrayCarrinho(arrayCarrinho.filter((produto) => produto.id !== produtoID))
+  }
+
   return (
     <>
       <Carrinho arrayCarrinho={arrayCarrinho} />
-      <PaginaDeProdutos addShopCart={addShopCart}/>
+      <PaginaDeProdutos addShopCart={addShopCart} removeShopCart={removeShopCart}/>
     </>
   )
 }

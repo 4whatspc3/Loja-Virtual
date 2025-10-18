@@ -1,4 +1,4 @@
-const Produtos = ({arrayDeProdutos, addShopCart}) => {
+const Produtos = ({arrayDeProdutos, addShopCart, removeShopCart}) => {
     
     return (<ul>
                 {arrayDeProdutos.map((produto) => 
@@ -7,7 +7,7 @@ const Produtos = ({arrayDeProdutos, addShopCart}) => {
                         <header><h2>{produto.title}</h2></header>
                         <div><p>{produto.price}</p></div>
                         <footer>
-                                <button>-</button>
+                                <button onClick={ () => removeShopCart(produto.id) }>-</button>
                                 <button onClick={ () => addShopCart(produto) }>+</button>
                         </footer>
                     </li>
