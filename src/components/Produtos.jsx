@@ -3,7 +3,7 @@ const Produtos = ({arrayDeProdutos}) => {
     return (<ul>
                 {arrayDeProdutos.map((produto) => 
                     <li key={produto.id}>
-                        <figure><img src={produto.image} alt={produto.description} /></figure>
+                        <figure><img style={{width : '100px', height: 'auto'}} src={produto.image} alt={produto.description} /></figure>
                         <header><h2>{produto.title}</h2></header>
                         <div><p>{produto.price}</p></div>
                         <footer>
