@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <Carrinho arrayCarrinho={arrayCarrinho} />
+      <Carrinho arrayCarrinho={arrayCarrinho} addShopCart={addShopCart} removeShopCart={removeShopCart} />
       <PaginaDeProdutos addShopCart={addShopCart} removeShopCart={removeShopCart}/>
     </>
   )

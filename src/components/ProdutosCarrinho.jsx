@@ -1,4 +1,4 @@
-const ProdutosCarrinho = ({itemDoCarrinho, id}) => {
+const ProdutosCarrinho = ({itemDoCarrinho, addShopCart, removeShopCart}) => {
     
     return (
             <li>
@@ -6,8 +6,8 @@ const ProdutosCarrinho = ({itemDoCarrinho, id}) => {
                 <header><h2>{itemDoCarrinho.title}</h2></header>
                 <div><p>{itemDoCarrinho.price}</p></div>
                 <footer>
-                        <button>-</button>
-                        <button>+</button>
+                        <button onClick={ () => removeShopCart(itemDoCarrinho.id) }>-</button>
+                        <button onClick={ () => addShopCart(itemDoCarrinho) }>+</button>
                 </footer>
             </li>
             )
