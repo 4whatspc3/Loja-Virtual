@@ -8,7 +8,18 @@ function App() {
   const [arrayCarrinho, setArrayCarrinho] = useState([])
 
   const addShopCart = (produto) => {
-      setArrayCarrinho((prev) => [...prev, produto])
+
+      const checkProduto = arrayCarrinho.find( (item) => item.id === produto.id);
+      
+      if(checkProduto){
+        const novoCarrinho = arrayCarrinho.map((item) => item.id === produto.id ?  {...item, quantidade : item.quantidade + 1} : item)
+
+        setArrayCarrinho(novoCarrinho)
+      } else {
+        const novoProduto = {...produto, quantidade : 1}
+
+        setArrayCarrinho((prev) => [...prev, novoProduto])
+      }
   }
 
   const removeShopCart = (produtoID) => {
