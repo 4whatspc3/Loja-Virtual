@@ -22,8 +22,16 @@ function App() {
       }
   }
 
-  const removeShopCart = (produtoID) => {
-    setArrayCarrinho(arrayCarrinho.filter((produto) => produto.id !== produtoID))
+  const removeShopCart = (produto) => {
+    const checkProduto = arrayCarrinho.find((item) => item.id === produto.id && produto.quantidade === 1);
+
+    if(checkProduto){
+      setArrayCarrinho(arrayCarrinho.filter((item) => item.id !== produto.id))
+    } else {
+      const novoCarrinho = arrayCarrinho.map((item) => item.id === produto.id ?  {...item, quantidade : item.quantidade - 1} : item)
+
+      setArrayCarrinho(novoCarrinho)
+    }
   }
 
   return (

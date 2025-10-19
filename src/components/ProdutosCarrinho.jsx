@@ -9,7 +9,7 @@ const ProdutosCarrinho = ({itemDoCarrinho, addShopCart, removeShopCart}) => {
                 <footer>
                         <p>Quantidade: {itemDoCarrinho.quantidade}</p>
                         <div>
-                            <button onClick={ () => removeShopCart(itemDoCarrinho.id) }>-</button>
+                            <button onClick={ () => removeShopCart(itemDoCarrinho) }>-</button>
                             <button onClick={ () => addShopCart(itemDoCarrinho) }>+</button>
                         </div>
                 </footer>
