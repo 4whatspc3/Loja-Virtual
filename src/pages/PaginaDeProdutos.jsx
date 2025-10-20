@@ -3,7 +3,6 @@ import Produtos from "../components/Produtos";
 import requestAPI from "../utils/requestAPI";
 import Filtro from "../components/Filtro";
 
-
 const PaginaDeProdutos = ({addShopCart, removeShopCart}) => {
 
     const [arrayDeProdutos, setArrayDeProdutos] = useState([])

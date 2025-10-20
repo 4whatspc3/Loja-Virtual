@@ -3,6 +3,7 @@ import { useState } from 'react'
 import PaginaDeProdutos from './pages/PaginaDeProdutos'
 import Carrinho from './components/Carrinho'
 import { Route, Routes } from 'react-router-dom'
+import Checkout from './pages/Checkout'
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
       <Carrinho arrayCarrinho={arrayCarrinho} addShopCart={addShopCart} removeShopCart={removeShopCart} />
       <Routes>
         <Route path='/' element={ <PaginaDeProdutos addShopCart={addShopCart} removeShopCart={removeShopCart}/>}/>
+        <Route path='/checkout' element={ <Checkout arrayCarrinho={arrayCarrinho} addShopCart={addShopCart} removeShopCart={removeShopCart}/>}/>
       </Routes>
     </>
   )
