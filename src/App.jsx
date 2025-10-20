@@ -2,6 +2,7 @@ import './App.css'
 import { useState } from 'react'
 import PaginaDeProdutos from './pages/PaginaDeProdutos'
 import Carrinho from './components/Carrinho'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
 
@@ -37,7 +38,9 @@ function App() {
   return (
     <>
       <Carrinho arrayCarrinho={arrayCarrinho} addShopCart={addShopCart} removeShopCart={removeShopCart} />
-      <PaginaDeProdutos addShopCart={addShopCart} removeShopCart={removeShopCart}/>
+      <Routes>
+        <Route path='/' element={ <PaginaDeProdutos addShopCart={addShopCart} removeShopCart={removeShopCart}/>}/>
+      </Routes>
     </>
   )
 }
