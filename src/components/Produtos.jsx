@@ -1,7 +1,9 @@
-const Produtos = ({arrayDeProdutos, addShopCart, removeShopCart}) => {
-    
+const Produtos = ({arrayDeProdutos, valorFiltro, addShopCart, removeShopCart}) => {
+
+    const produtosFiltrados = arrayDeProdutos.map((item) => item).filter((item) => valorFiltro === 'All' ? item : item.category === valorFiltro)
+
     return (<ul>
-                {arrayDeProdutos.map((produto) => 
+                {produtosFiltrados.map((produto) => 
                     <li key={produto.id}>
                         <figure><img style={{width : '100px', height: 'auto'}} src={produto.image} alt={produto.description} /></figure>
                         <header><h2>{produto.title}</h2></header>
