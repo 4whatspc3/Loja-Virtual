@@ -18,7 +18,7 @@ const Carrinho = ({arrayCarrinho, addShopCart, removeShopCart, valorTotal}) => {
                     <ProdutosCarrinho key={index} itemDoCarrinho={itemDoCarrinho} addShopCart={addShopCart} removeShopCart={removeShopCart}/>
                 )}
                 <div>
-                    <p>R$ {valorTotal}</p>
+                    <p>{valorTotal}</p>
                     <button onClick={ handleClick }>Finalizar a compra</button>
                 </div>
             </ul>) : (<></>)

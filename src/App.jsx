@@ -4,6 +4,7 @@ import PaginaDeProdutos from './pages/PaginaDeProdutos'
 import Carrinho from './components/Carrinho'
 import { Route, Routes } from 'react-router-dom'
 import Checkout from './pages/Checkout'
+import convertaParaReal from './utils/convertaParaReal'
 
 function App() {
 
@@ -38,7 +39,11 @@ function App() {
   }
 
     useEffect(() => {
-      setValortotal(arrayCarrinho.reduce((acc, curr) => acc + curr.price, 0 ))
+      const calculoTotal = arrayCarrinho.reduce((acc, curr) => acc + (curr.price * curr.quantidade), 0 );
+
+      const resultado = convertaParaReal(calculoTotal)
+
+      setValortotal(resultado)
     }, [arrayCarrinho])
 
   return (
