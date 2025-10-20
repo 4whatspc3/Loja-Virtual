@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Produtos from "../components/Produtos";
 import requestAPI from "../utils/requestAPI";
+import Filtro from "../components/Filtro";
 
 
 const PaginaDeProdutos = ({addShopCart, removeShopCart}) => {
@@ -12,6 +13,7 @@ const PaginaDeProdutos = ({addShopCart, removeShopCart}) => {
     }, [])
 
     return (<>
+                <Filtro device={'desktop'}/>
                 <Produtos arrayDeProdutos={arrayDeProdutos} addShopCart={addShopCart} removeShopCart={removeShopCart}/>
             </>)
 }
