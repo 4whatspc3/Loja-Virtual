@@ -14,8 +14,8 @@ const Carrinho = ({arrayCarrinho, addShopCart, removeShopCart, valorTotal}) => {
 
         return( location.pathname === '/' ?
             (<ul>
-                {arrayCarrinho.map((itemDoCarrinho, index) => 
-                    <ProdutosCarrinho key={index} itemDoCarrinho={itemDoCarrinho} addShopCart={addShopCart} removeShopCart={removeShopCart}/>
+                {arrayCarrinho.map((itemDoCarrinho) => 
+                    <ProdutosCarrinho key={itemDoCarrinho.id} itemDoCarrinho={itemDoCarrinho} addShopCart={addShopCart} removeShopCart={removeShopCart}/>
                 )}
                 <div>
                     <p>{valorTotal}</p>

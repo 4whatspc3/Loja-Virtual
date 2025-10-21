@@ -6,11 +6,20 @@ import Filtro from "../components/Filtro";
 const PaginaDeProdutos = ({addShopCart, removeShopCart}) => {
 
     const [arrayDeProdutos, setArrayDeProdutos] = useState([])
+    const [produtosFiltrados, setProdutosFiltrados] = useState([])
     const [valorFiltro, setValorFiltro] = useState('All')
 
     useEffect(() => {
         requestAPI('https://fakestoreapi.com/products', setArrayDeProdutos);
     }, [])
+
+    useEffect(() => {
+        const filtre = arrayDeProdutos.map((item) => item)
+        .filter((item) => valorFiltro === 'All' ? item : item.category === valorFiltro)
+
+        setProdutosFiltrados(filtre)
+
+    }, [valorFiltro, arrayDeProdutos])
 
     const handleFiltro = (categoria) => {
         categoria === "men's clothing" ? setValorFiltro("men's clothing") :
@@ -22,7 +31,9 @@ const PaginaDeProdutos = ({addShopCart, removeShopCart}) => {
 
     return (<>
                 <Filtro device={'desktop'} handleFiltro={handleFiltro}/>
-                <Produtos arrayDeProdutos={arrayDeProdutos} valorFiltro={valorFiltro} addShopCart={addShopCart} removeShopCart={removeShopCart}/>
+                <ul>
+                    {produtosFiltrados.map((produto) => <Produtos key={produto.id} produto={produto} addShopCart={addShopCart} removeShopCart={removeShopCart}/>)}
+                </ul>
             </>)
 }
 
