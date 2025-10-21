@@ -32,7 +32,7 @@ const PaginaDeProdutos = ({addShopCart, removeShopCart}) => {
     return (<>
                 <Filtro device={'desktop'} handleFiltro={handleFiltro}/>
                 <ul>
-                    {produtosFiltrados.map((produto) => <Produtos key={produto.id} produto={produto} addShopCart={addShopCart} removeShopCart={removeShopCart}/>)}
+                    {produtosFiltrados.map((produto) => <Produtos key={produto.id} produto={produto} addShopCart={addShopCart}/>)}
                 </ul>
             </>)
 }
