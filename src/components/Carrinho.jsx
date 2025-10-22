@@ -3,17 +3,12 @@ import ProdutosCarrinho from "./ProdutosCarrinho"
 
 const Carrinho = ({arrayCarrinho, addShopCart, removeShopCart, valorTotal}) => {
         const navigate = useNavigate()
-        
-        const location = useLocation()
 
         const handleClick = () => {
             navigate('/checkout')
         }
 
-        console.log(location.pathname)
-
-        return( location.pathname === '/' ?
-            (<ul>
+        return(<ul>
                 {arrayCarrinho.map((itemDoCarrinho) => 
                     <ProdutosCarrinho key={itemDoCarrinho.id} itemDoCarrinho={itemDoCarrinho} addShopCart={addShopCart} removeShopCart={removeShopCart}/>
                 )}
@@ -21,8 +16,7 @@ const Carrinho = ({arrayCarrinho, addShopCart, removeShopCart, valorTotal}) => {
                     <p>{valorTotal}</p>
                     <button onClick={ handleClick }>Finalizar a compra</button>
                 </div>
-            </ul>) : (<></>)
-        )
+            </ul>)
 }
 
 export default Carrinho;
