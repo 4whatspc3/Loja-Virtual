@@ -1,6 +1,6 @@
 import convertaParaReal from "../utils/convertaParaReal";
 
-const ProdutoosCheckout = ({itemDoCarrinho, addShopCart, removeShopCart}) => {    
+const ProdutosCheckout = ({itemDoCarrinho, addShopCart, removeShopCart}) => {    
     return (
             <li>
                 <figure><img style={{width : '50px', height: 'auto'}} src={itemDoCarrinho.image} alt={itemDoCarrinho.description} /></figure>
@@ -17,4 +17,4 @@ const ProdutoosCheckout = ({itemDoCarrinho, addShopCart, removeShopCart}) => {
             )
 }
 
-export default ProdutoosCheckout;
+export default ProdutosCheckout;
