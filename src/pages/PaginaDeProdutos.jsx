@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import Produtos from "../components/Produtos";
 import requestAPI from "../utils/requestAPI";
 import Filtro from "../components/Filtro";
+import ListaAtualDeProdutos from "../components/ListaAtualDeProdutos";
+import Detalhes from "../components/Detalhes";
+import Carrinho from "../components/Carrinho";
 
-const PaginaDeProdutos = ({addShopCart, removeShopCart}) => {
+const PaginaDeProdutos = ({addShopCart, arrayCarrinho, removeShopCart, valorTotal}) => {
 
     const [arrayDeProdutos, setArrayDeProdutos] = useState([])
     const [produtosFiltrados, setProdutosFiltrados] = useState([])
@@ -31,9 +33,9 @@ const PaginaDeProdutos = ({addShopCart, removeShopCart}) => {
 
     return (<>
                 <Filtro device={'desktop'} handleFiltro={handleFiltro}/>
-                <ul>
-                    {produtosFiltrados.map((produto) => <Produtos key={produto.id} produto={produto} addShopCart={addShopCart}/>)}
-                </ul>
+                <Carrinho arrayCarrinho={arrayCarrinho} addShopCart={addShopCart} removeShopCart={removeShopCart} valorTotal={valorTotal}/>
+                <ListaAtualDeProdutos produtosFiltrados={produtosFiltrados} addShopCart={addShopCart}/>
+                <Detalhes addShopCart={addShopCart}/>
             </>)
 }
 
