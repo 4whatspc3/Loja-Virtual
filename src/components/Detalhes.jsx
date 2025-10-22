@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react";
 import convertaParaReal from "../utils/convertaParaReal";
 import requestAPI from "../utils/requestAPI";
@@ -6,6 +6,12 @@ import requestAPI from "../utils/requestAPI";
 const Detalhes = ({addShopCart}) => {
     const { id } = useParams();
     const [produto, setProduto] = useState({})
+
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        navigate(-1)
+    }
 
     useEffect(() => {
         requestAPI(`https://fakestoreapi.com/products/${id}`, setProduto);
@@ -18,6 +24,7 @@ const Detalhes = ({addShopCart}) => {
         <div><p>{produto.description}</p></div>
         <div><p>{convertaParaReal(produto.price)}</p></div>
         <footer>
+            <button onClick={ handleClick }>Voltar</button>
             <button onClick={ () => addShopCart(produto) }>Adicionar ao carrinho</button>
         </footer>
     </div>)
