@@ -1,10 +1,11 @@
 import './App.css'
 import { useState, useEffect } from 'react'
 import PaginaDeProdutos from './pages/PaginaDeProdutos'
-import Carrinho from './components/Carrinho'
 import { Route, Routes } from 'react-router-dom'
 import Checkout from './pages/Checkout'
 import convertaParaReal from './utils/convertaParaReal'
+import Home from './pages/Home'
+import Detalhes from './components/Detalhes'
 
 function App() {
 
@@ -48,10 +49,12 @@ function App() {
 
   return (
     <>
-      <Carrinho arrayCarrinho={arrayCarrinho} addShopCart={addShopCart} removeShopCart={removeShopCart} valorTotal={valorTotal}/>
+      
       <Routes>
-        <Route path='/' element={ <PaginaDeProdutos addShopCart={addShopCart} removeShopCart={removeShopCart}/>}/>
+        <Route path='/' element={<Home />} />
+        <Route path='/produtos/' element={ <PaginaDeProdutos valorTotal={valorTotal} arrayCarrinho={arrayCarrinho} addShopCart={addShopCart} removeShopCart={removeShopCart}/>}/>
         <Route path='/checkout' element={ <Checkout arrayCarrinho={arrayCarrinho} addShopCart={addShopCart} removeShopCart={removeShopCart}/>}/>
+        <Route path='/produtos/:id' element={ <Detalhes addShopCart={addShopCart}/>}></Route>
       </Routes>
     </>
   )
