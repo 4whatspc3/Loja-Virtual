@@ -5,7 +5,7 @@ import ListaAtualDeProdutos from "../components/ListaAtualDeProdutos";
 import Detalhes from "../components/Detalhes";
 import Carrinho from "../components/Carrinho";
 
-const PaginaDeProdutos = ({addShopCart, arrayCarrinho, removeShopCart, valorTotal}) => {
+const PaginaDeProdutos = ({addShopCart}) => {
 
     const [arrayDeProdutos, setArrayDeProdutos] = useState([])
     const [produtosFiltrados, setProdutosFiltrados] = useState([])
@@ -33,7 +33,6 @@ const PaginaDeProdutos = ({addShopCart, arrayCarrinho, removeShopCart, valorTota
 
     return (<>
                 <Filtro device={'desktop'} handleFiltro={handleFiltro}/>
-                <Carrinho arrayCarrinho={arrayCarrinho} addShopCart={addShopCart} removeShopCart={removeShopCart} valorTotal={valorTotal}/>
                 <ListaAtualDeProdutos produtosFiltrados={produtosFiltrados} addShopCart={addShopCart}/>
                 <Detalhes addShopCart={addShopCart}/>
             </>)
