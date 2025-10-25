@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+
+@theme { 
+  /* FUNDO E SUPERFÍCIE */
+  --color-background-page: #b5ffe1ff;    /* Aquamarine */
+  --color-background-surface: #93e5abff; /* Celadon - Para Cards, Headers, etc. */
+
+  /* TEXTO */
+  --color-text-base: #00241bff;          /* Dark Green - Texto principal escuro */
+  --color-text-subtle: #4e878cff;        /* Dark Cyan - Texto secundário/sutil */
+
+  /* AÇÕES E DESTAQUES */
+  --color-primary: #65b891ff;            /* Mint - Botões principais (CTA) */
+  --color-secondary: #4e878cff;          /* Dark Cyan - Botões secundários, Destaques */
+  
+  /* alerta, se necessário */
+  --color-success: #22c55e;
+}
+
+#root {
+width: 100%;
+height: 100%;
+}

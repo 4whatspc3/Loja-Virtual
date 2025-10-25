@@ -3,7 +3,6 @@ import requestAPI from "../utils/requestAPI";
 import Filtro from "../components/Filtro";
 import ListaAtualDeProdutos from "../components/ListaAtualDeProdutos";
 import Detalhes from "../components/Detalhes";
-import Carrinho from "../components/Carrinho";
 
 const PaginaDeProdutos = ({addShopCart}) => {
 
