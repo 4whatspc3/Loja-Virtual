@@ -3,6 +3,7 @@ import requestAPI from "../utils/requestAPI";
 import Filtro from "../components/Filtro";
 import ListaAtualDeProdutos from "../components/ListaAtualDeProdutos";
 import Detalhes from "../components/Detalhes";
+import Hero from "../components/layout/Hero";
 
 const PaginaDeProdutos = ({addShopCart}) => {
 
@@ -31,6 +32,7 @@ const PaginaDeProdutos = ({addShopCart}) => {
     }
 
     return (<>
+                <Hero />
                 <Filtro device={'desktop'} handleFiltro={handleFiltro}/>
                 <ListaAtualDeProdutos produtosFiltrados={produtosFiltrados} addShopCart={addShopCart}/>
                 <Detalhes addShopCart={addShopCart}/>
