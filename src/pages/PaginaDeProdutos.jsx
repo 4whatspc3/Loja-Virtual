@@ -33,9 +33,11 @@ const PaginaDeProdutos = ({addShopCart}) => {
 
     return (<>
                 <Hero />
-                <Filtro device={'desktop'} handleFiltro={handleFiltro}/>
-                <ListaAtualDeProdutos produtosFiltrados={produtosFiltrados} addShopCart={addShopCart}/>
-                <Detalhes addShopCart={addShopCart}/>
+                <main className="p-6 flex flex-col gap-10">
+                    <Filtro device={'mobile'} handleFiltro={handleFiltro}/>
+                    <ListaAtualDeProdutos produtosFiltrados={produtosFiltrados} addShopCart={addShopCart}/>
+                    <Detalhes addShopCart={addShopCart}/>
+                </main>
             </>)
 }
 
