@@ -1,4 +1,4 @@
-const FiltroMobile = ({handleFiltro}) => {
+const Filtro = ({handleFiltro}) => {
     return (
     <div className="w-full flex flex-col gap-4">
         <h2 className="text-2xl font-medium font-inter text-sky-700 ">Categorias</h2>
@@ -11,23 +11,6 @@ const FiltroMobile = ({handleFiltro}) => {
         </ul>
     </div>
     )
-}
-
-const FiltroDesktop = ({handleFiltro}) => {
-    return (
-    <ul>
-        <li onClick={() => handleFiltro('All')}>Tudo</li>
-        <li onClick={() => handleFiltro("men's clothing")}>Roupas masculinas</li>
-        <li onClick={() => handleFiltro("women's clothing")}>Roupas femininas</li>
-        <li onClick={() => handleFiltro("jewelery")}>Joias</li>
-        <li onClick={() => handleFiltro("electronics")}>Eletrônicos</li>
-    </ul>
-    )
-}
-
-
-const Filtro = ({device, handleFiltro}) => {
-    return (device === 'mobile' ? <FiltroMobile handleFiltro={handleFiltro} /> : <FiltroDesktop handleFiltro={handleFiltro} />)    
 }
 
 export default Filtro;
