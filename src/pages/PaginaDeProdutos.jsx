@@ -33,7 +33,7 @@ const PaginaDeProdutos = ({addShopCart}) => {
 
     return (<>
                 <Hero />
-                <main className="p-6 flex flex-col gap-10">
+                <main className="p-6 flex flex-col gap-10 w-full overflow-hidden">
                     <Filtro device={'mobile'} handleFiltro={handleFiltro}/>
                     <ListaAtualDeProdutos produtosFiltrados={produtosFiltrados} addShopCart={addShopCart}/>
                     <Detalhes addShopCart={addShopCart}/>
