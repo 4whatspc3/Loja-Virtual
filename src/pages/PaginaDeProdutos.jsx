@@ -36,7 +36,6 @@ const PaginaDeProdutos = ({addShopCart}) => {
                 <main className="p-6 flex flex-col gap-10 w-full overflow-hidden">
                     <Filtro handleFiltro={handleFiltro}/>
                     <ListaAtualDeProdutos produtosFiltrados={produtosFiltrados} addShopCart={addShopCart}/>
-                    <Detalhes addShopCart={addShopCart}/>
                 </main>
             </>)
 }
