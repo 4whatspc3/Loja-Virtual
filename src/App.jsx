@@ -4,7 +4,7 @@ import PaginaDeProdutos from './pages/PaginaDeProdutos'
 import { Route, Routes } from 'react-router-dom'
 import Checkout from './pages/Checkout'
 import convertaParaReal from './utils/convertaParaReal'
-import Home from './pages/Home'
+import Login from './pages/Login'
 import Detalhes from './components/Detalhes'
 import Carrinho from './components/Carrinho'
 
@@ -52,7 +52,7 @@ function App() {
     <>
       <Carrinho arrayCarrinho={arrayCarrinho} addShopCart={addShopCart} removeShopCart={removeShopCart} valorTotal={valorTotal}/>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Login />} />
         <Route path='/produtos/' element={ <PaginaDeProdutos addShopCart={addShopCart} />}/>
         <Route path='/checkout' element={ <Checkout arrayCarrinho={arrayCarrinho} addShopCart={addShopCart} removeShopCart={removeShopCart}/>}/>
         <Route path='/produtos/:id' element={ <Detalhes addShopCart={addShopCart}/>}></Route>
