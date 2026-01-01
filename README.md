@@ -1,5 +1,11 @@
 # 🛍️ Loja Virtual
 
+> **⚠️ STATUS: PROJETO SUSPENSO TEMPORARIAMENTE**
+>
+> Este projeto está pausado no momento, pois estou dedicando meu tempo ao aprendizado de **C#** e ao desenvolvimento de novos projetos nesta linguagem. Mas, sinta-se à vontade para explorar o código atual!
+
+---
+
 ## 💻 Sobre o Projeto
 
 Este projeto consiste na **Loja Virtual**, desenvolvida com **React**, sendo o trabalho de conclusão do curso de programação Front-end ofertado pela **Unifel** em parceria com a **Salvador Tech**.
